@@ -21,7 +21,7 @@ public class Main extends Application {
 
         Stage stage = new Stage();
         FXMLLoader autoLoader = new FXMLLoader();
-        autoLoader.setLocation(getClass().getResource("../main/resources/fxml/AuthorizationWindow.fxml"));
+        autoLoader.setLocation(getClass().getClassLoader().getResource("fxml/AuthorizationWindow.fxml"));
         Parent autoRoot = autoLoader.load();
         Const.authorizationController = autoLoader.getController();
         stage.setScene(new Scene(autoRoot));
