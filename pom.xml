@@ -10,6 +10,12 @@
     <dependencies>
 
         <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.10.Final</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics</artifactId>
             <version>12.0.1</version>
@@ -40,11 +46,12 @@
         <plugins>
 
             <plugin>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.1</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
                 <configuration>
-                    <mainClass>main.Main</mainClass>
+                    <source>1.10</source>
+                    <target>1.10</target>
                 </configuration>
             </plugin>
 

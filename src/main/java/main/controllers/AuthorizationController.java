@@ -1,6 +1,5 @@
 package main.controllers;
 
-import javafx.animation.ParallelTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
@@ -8,6 +7,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.util.Duration;
+import main.Const;
+import main.nettyClient.NettyClient;
+import main.nettyClient.RequestDataEncoder;
+import main.nettyClient.ResponseDataDecoder;
+import main.nettyClient.UserHandler;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AuthorizationController {
 
@@ -22,9 +29,21 @@ public class AuthorizationController {
 
     @FXML
     void initialize() {
-
     }
 
+    @FXML
+    void autorizationProcess(){
+        List<Object> listHandler= new ArrayList<>();
+        listHandler.add( new RequestDataEncoder(Const.REQUEST_AUTHORIZATION));
+        listHandler.add( new ResponseDataDecoder());
+        listHandler.add( new UserHandler(loginFieldSignIn.getText(),passwordFieldSignIn.getText().toCharArray()));
+        try {
+            NettyClient.sendMessage(listHandler);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     @FXML
     void openSignUp(){
         TranslateTransition tt1 = new TranslateTransition(Duration.millis(400),signUpButton);
