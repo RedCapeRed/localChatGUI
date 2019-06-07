@@ -20,9 +20,7 @@ public class RequestDataEncoder extends MessageToByteEncoder<UserData> {
         outBuf.writeInt(messageCode);
         outBuf.writeInt(userData.getLogin().length());
         outBuf.writeCharSequence(userData.getLogin(), charset);
-        outBuf.writeInt(userData.getPassword().length);
-        for(char i : userData.getPassword())
-            outBuf.writeChar(i);
-
+        outBuf.writeInt(userData.getPassword().length());
+        outBuf.writeCharSequence(userData.getPassword(), charset);
     }
 }

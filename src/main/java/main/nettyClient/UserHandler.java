@@ -6,10 +6,10 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 
 public class UserHandler extends ChannelInboundHandlerAdapter {
     private String login;
-    private char[] password;
+    private String password;
 
 
-    public UserHandler(String login, char[] password) {
+    public UserHandler(String login, String password) {
         this.login = login;
         this.password = password;
     }

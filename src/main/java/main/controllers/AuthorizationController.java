@@ -13,6 +13,7 @@ import main.nettyClient.RequestDataEncoder;
 import main.nettyClient.ResponseDataDecoder;
 import main.nettyClient.UserHandler;
 
+import javax.swing.text.html.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +29,9 @@ public class AuthorizationController {
     private Button signInButton,signUpButton,signUpButton1,backButton;
 
     @FXML
+    private ImageView close;
+
+    @FXML
     void initialize() {
     }
 
@@ -36,10 +40,9 @@ public class AuthorizationController {
         List<Object> listHandler= new ArrayList<>();
         listHandler.add( new RequestDataEncoder(Const.REQUEST_AUTHORIZATION));
         listHandler.add( new ResponseDataDecoder());
-        listHandler.add( new UserHandler(loginFieldSignIn.getText(),passwordFieldSignIn.getText().toCharArray()));
+        listHandler.add( new UserHandler(loginFieldSignIn.getText(),passwordFieldSignIn.getText()));
         try {
             NettyClient.sendMessage(listHandler);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -71,5 +74,10 @@ public class AuthorizationController {
         tt4.setByX(-283);
         SequentialTransition sequentialTransition = new SequentialTransition(tt4,tt3,tt1,tt2);
         sequentialTransition.play();
+    }
+
+    @FXML
+    void closeWindow(){
+        System.exit(0);
     }
 }

@@ -13,7 +13,7 @@
    <children>
       <Pane layoutX="36.0" prefHeight="430.0" prefWidth="305.0" style="-fx-background-color: #3db3b1;">
          <children>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="272.0">
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="272.0" onMouseClicked="#closeWindow">
                <image>
                   <Image url="@../icons/exit.png" />
                </image>

@@ -3,7 +3,7 @@ package main.nettyClient;
 public class UserData {
 
     private String login;
-    private char[] password;
+    private String password;
 
     public String getLogin() {
         return login;
@@ -11,10 +11,10 @@ public class UserData {
     public void setLogin(String login) {
         this.login = login;
     }
-    public char[] getPassword() {
+    public String getPassword() {
         return password;
     }
-    public void setPassword(char[] password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 }
