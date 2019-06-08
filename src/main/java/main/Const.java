@@ -12,7 +12,7 @@ public class Const {
 
 
     //=========================================== ERROR CODE =======================================================
-    public static int ERROR_ACCOUNT_NO_EXIST_= 300,ERROR_LOGIN_ALREADY_TAKEN = 301;
+    public static int ERROR_ACCOUNT_NOT_EXIST_= 300,ERROR_LOGIN_ALREADY_TAKEN = 301;
 
 
 

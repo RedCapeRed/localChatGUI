@@ -9,9 +9,9 @@ import javafx.scene.control.TextField;
 import javafx.util.Duration;
 import main.Const;
 import main.nettyClient.NettyClient;
-import main.nettyClient.RequestDataEncoder;
 import main.nettyClient.ResponseDataDecoder;
-import main.nettyClient.UserHandler;
+import main.nettyClient.userService.UserHandler;
+import main.nettyClient.userService.UsertDataEncoder;
 
 import javax.swing.text.html.ImageView;
 import java.util.ArrayList;
@@ -36,11 +36,24 @@ public class AuthorizationController {
     }
 
     @FXML
-    void autorizationProcess(){
+    void authorizationProcess(){
         List<Object> listHandler= new ArrayList<>();
-        listHandler.add( new RequestDataEncoder(Const.REQUEST_AUTHORIZATION));
+        listHandler.add( new UsertDataEncoder(Const.REQUEST_AUTHORIZATION));
         listHandler.add( new ResponseDataDecoder());
-        listHandler.add( new UserHandler(loginFieldSignIn.getText(),passwordFieldSignIn.getText()));
+        listHandler.add( new UserHandler(loginFieldSignIn.getText(),passwordFieldSignIn.getText(),true));
+        try {
+            NettyClient.sendMessage(listHandler);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    void registrationProcess(){
+        System.out.println(1);
+        List<Object> listHandler= new ArrayList<>();
+        listHandler.add( new UsertDataEncoder(Const.REQUEST_REGISTRATION));
+        listHandler.add( new ResponseDataDecoder());
+        listHandler.add( new UserHandler(loginFieldSignIn.getText(),passwordFieldSignIn.getText(),false));
         try {
             NettyClient.sendMessage(listHandler);
         } catch (Exception e) {

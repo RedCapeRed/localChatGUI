@@ -28,7 +28,7 @@
                   <Image url="@../icons/logo.png" />
                </image>
             </ImageView>
-            <Button fx:id="signInButton" layoutX="185.0" layoutY="365.0" mnemonicParsing="false" onMouseClicked="#autorizationProcess" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: #3db3b1; -fx-background-radius: 0;" text="Sign in" textFill="#242e44">
+            <Button fx:id="signInButton" layoutX="185.0" layoutY="365.0" mnemonicParsing="false" onMouseClicked="#authorizationProcess" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: #3db3b1; -fx-background-radius: 0;" text="Sign in" textFill="#242e44">
                <font>
                   <Font name="Bauhaus 93" size="18.0" />
                </font>
@@ -38,10 +38,10 @@
                   <Font name="Bauhaus 93" size="18.0" />
                </font>
             </Button>
-            <TextField fx:id="loginFieldSignIn" alignment="CENTER" layoutX="35.0" layoutY="203.0" prefHeight="37.0" prefWidth="235.0" promptText="Login" style="-fx-border-color: #3db3b1; -fx-border-width: 2; -fx-background-color: Transporent;" />
+            <TextField fx:id="loginFieldSignIn" alignment="CENTER" layoutX="35.0" layoutY="203.0" prefHeight="37.0" prefWidth="235.0" promptText="Login" style="-fx-border-color: #3db3b1; -fx-border-width: 2; -fx-background-color: Transporent; -fx-text-fill: #FFF;" />
          </children>
       </Pane>
-      <Button fx:id="signUpButton1" alignment="CENTER" layoutX="-98.0" layoutY="399.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: #3db3b1; -fx-background-radius: 0;" text="Sign up" textFill="#242e44">
+      <Button fx:id="signUpButton1" alignment="CENTER" layoutX="-98.0" layoutY="399.0" mnemonicParsing="false" onMouseClicked="#registrationProcess" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: #3db3b1; -fx-background-radius: 0;" text="Sign up" textFill="#242e44">
          <font>
             <Font name="Bauhaus 93" size="18.0" />
          </font>

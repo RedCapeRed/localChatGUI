@@ -3,6 +3,7 @@ package main.nettyClient;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
+import main.nettyClient.userService.UserData;
 
 public class MessageHandler extends ChannelInboundHandlerAdapter {
     private String loginSender ;
